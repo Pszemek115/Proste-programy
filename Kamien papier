@@ -1,0 +1,45 @@
+#Kamien papier nozyce
+import random
+
+scoregracz = 0
+scorekomputer = 0
+
+i = 0
+
+choose = ["kamien", "papier","nozyce"]
+while i < 10:
+i += 1
+print("\nGra nr", i , "\n")
+gracz = input("Co wybierasz kamien papier czy nozyce: ")
+komputer = choose[random.randint(0, 2)]
+print("Komputer wybrał: " , komputer )
+
+    if (gracz == komputer):
+        print("remis")
+    elif (gracz == "kamien") and (komputer == "papier"):
+        scorekomputer += 1
+        print("Przegales")
+    elif (gracz == "papier") and (komputer == "kamien"):
+        scoregracz += 1
+        print("Wygrales")
+    elif (gracz == "nozyce") and (komputer == "kamien"):
+        scorekomputer += 1
+        print("Przegrales")
+    elif (gracz == "nozyce") and (komputer == "papier"):
+        scoregracz += 1
+        print("Wygrales")
+    elif (gracz == "kamien") and (komputer == "nozyce"):
+        scoregracz += 1
+        print("Wygrales")
+    elif (gracz == "papier") and (komputer == "nozyce"):
+        scorekomputer += 1
+        print("Przegrales")
+    print("Punkty gracza: " , scoregracz)
+    print("Punkty komputera: " , scorekomputer)
+else:
+if (scorekomputer > scoregracz):
+print("Wygrał komputer")
+elif (scorekomputer < scoregracz):
+print("Wygrał gracz")
+elif (scorekomputer == scoregracz):
+print("Remis ")
